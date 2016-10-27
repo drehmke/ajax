@@ -1,8 +1,8 @@
 
 <h2>Home</h2>
 <ul>
-    <li ng-repeat="item in controller.products">
-        Name: {{item.name}} Price: {{item.price}} Tax: {{item.tax}}
+    <li ng-repeat="item in controller.products|filter:'i'">
+        Name: {{item.name}} Price: {{item.price|currency}} Tax: {{item.tax|currency}}
     </li>
 </ul>
 
