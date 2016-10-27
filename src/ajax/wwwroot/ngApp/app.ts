@@ -10,9 +10,11 @@ namespace ajax {
             .state('home', {
                 url: '/',
                 templateUrl: '/ngApp/views/home.html',
-                controller: ajax.Controllers.HomeController,
+                //controller: ajax.Controllers.HomeController,
+                controller: ajax.Controllers.ProductsController,
                 controllerAs: 'controller'
             })
+            /*
             .state('about', {
                 url: '/about',
                 templateUrl: '/ngApp/views/about.html',
@@ -22,7 +24,7 @@ namespace ajax {
             .state('notFound', {
                 url: '/notFound',
                 templateUrl: '/ngApp/views/notFound.html'
-            });
+            })*/;
 
         // Handle request for non-existent route
         $urlRouterProvider.otherwise('/notFound');

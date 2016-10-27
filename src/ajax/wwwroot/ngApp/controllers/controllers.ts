@@ -1,18 +1,22 @@
 namespace ajax.Controllers {
 
-    export class HomeController {
-        public message = 'Hello from the home page!';
-        public movies;
+    export class ProductsController {
+        public products;
 
-        constructor(movieService:ajax.Services.MovieService) {
-            this.movies = movieService.listMovies();
+        constructor(TaxService) {
+            this.products = [{
+                name: `Milk`,
+                price: 1.55,
+                tax: TaxService.CalculateTax(1.99)
+            }];
         }
+
+        //constructor($http: ng.IHttpService) {
+        //    $http.get(`/api/products/`).then((response) => {
+        //        this.products = response.data;
+        //    });
+        //}
     }
 
-
-
-    export class AboutController {
-        public message = 'Hello from the about page!';
-    }
-
+    angular.module(`ajax`).controller(`ProductsController`, ProductsController);
 }
